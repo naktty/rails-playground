@@ -9,4 +9,8 @@
     <%= user.email %>
   </p>
 
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag user.image if user.image.attached? %>
+  </p>
 </div>

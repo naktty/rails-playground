@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    @user.image.attach(params[:user][:image])
 
     respond_to do |format|
       if @user.save
@@ -65,6 +66,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.expect(user: [ :name, :email ])
+      params.expect(user: [ :name, :email, :image ])
     end
 end
