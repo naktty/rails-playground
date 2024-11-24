@@ -12,5 +12,6 @@
   <p>
     <strong>Image:</strong>
     <%= image_tag cdn_image_url(user.image) if user.image.attached? %>
+    <%= image_tag url_for(user.image) if user.image.attached? %>
   </p>
 </div>
